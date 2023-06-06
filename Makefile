@@ -1,6 +1,6 @@
 #
 #
-# Create the phpvms database if needed:
+# Create the phpvms public\smartcars\0.2.1\handlers\phpvms5\assets\database if needed:
 # docker exec phpvms /usr/bin/mysql -uroot -e 'CREATE DATABASE phpvms'
 SHELL := /bin/bash
 COMPOSER ?= $(shell which composer)
@@ -75,7 +75,7 @@ tests: test
 
 .PHONY: test
 test:
-	@#php artisan database:create --reset
+	@#php artisan public\smartcars\0.2.1\handlers\phpvms5\assets\database:create --reset
 	@vendor/bin/phpunit --verbose
 
 .PHONY: phpcs

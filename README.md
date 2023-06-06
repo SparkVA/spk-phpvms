@@ -18,7 +18,7 @@ A full distribution, with all of the composer dependencies, is available at this
   - openssl
   - pdo
   - tokenizer
-- Database:
+- public\smartcars\0.3.1\handlers\phpvms7\assets\Database:
   - MySQL 5.5+ (or MySQL variant, including MariaDB and Percona)
 
 [View more details on requirements](https://docs.phpvms.net/requirements)
