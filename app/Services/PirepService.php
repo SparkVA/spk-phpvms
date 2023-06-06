@@ -8,6 +8,7 @@ use App\Events\PirepCancelled;
 use App\Events\PirepFiled;
 use App\Events\PirepPrefiled;
 use App\Events\PirepRejected;
+use App\Events\ProcessAward;
 use App\Events\UserStatsChanged;
 use App\Exceptions\AircraftInvalid;
 use App\Exceptions\AircraftNotAtAirport;
@@ -679,6 +680,7 @@ class PirepService extends Service
 
         $this->setPilotState($pilot, $pirep);
         event(new PirepAccepted($pirep));
+        event(new ProcessAward($pirep->user));
 
         return $pirep;
     }
