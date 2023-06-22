@@ -40,7 +40,12 @@ function buildFrontendAssets()
     'node_modules/bootstrap/dist/js/bootstrap.js',
   ], 'public/assets/frontend/js/vendor.js');
 }
+function buildSparkFrontendAssets() {
+  mix.sass('resources/sass/spk/spk.scss', 'public/assets/spk/spk.css')
+    .sourceMaps();
 
+  mix.scripts([]);
+}
 /**
  *
  */

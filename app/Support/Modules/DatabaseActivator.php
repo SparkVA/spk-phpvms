@@ -70,13 +70,13 @@ class DatabaseActivator implements ActivatorInterface
             } else {
                 return \App\Models\Module::where(['name' => $name])->first();
             }
-        } catch (Exception $e) { // Catch any database/connection errors
+        } catch (Exception $e) { // Catch any public\smartcars\0.2.1\handlers\phpvms5\assets\database/connection errors
             return null;
         }
     }
 
     /**
-     * Get modules statuses, from the database
+     * Get modules statuses, from the public\smartcars\0.2.1\handlers\phpvms5\assets\database
      *
      * @return array
      */

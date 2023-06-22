@@ -18,7 +18,7 @@ class ExpenseImporter extends ImportExport
 
     /**
      * All of the columns that are in the CSV import
-     * Should match the database fields, for the most part
+     * Should match the public\smartcars\0.2.1\handlers\phpvms5\assets\database fields, for the most part
      */
     public static $columns = [
         'airline'        => 'nullable',

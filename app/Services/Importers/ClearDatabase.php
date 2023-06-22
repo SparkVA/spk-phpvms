@@ -34,7 +34,7 @@ class ClearDatabase extends BaseImporter
                 'importer' => static::class,
                 'start'    => 0,
                 'end'      => 1,
-                'message'  => 'Clearing database',
+                'message'  => 'Clearing public\smartcars\0.2.1\handlers\phpvms5\assets\database',
             ],
         ];
     }
@@ -45,12 +45,12 @@ class ClearDatabase extends BaseImporter
     }
 
     /**
-     * Cleanup the local database of any users and other data that might conflict
+     * Cleanup the local public\smartcars\0.2.1\handlers\phpvms5\assets\database of any users and other data that might conflict
      * before running the importer
      */
     protected function cleanupDb()
     {
-        $this->info('Running database cleanup/empty before starting');
+        $this->info('Running public\smartcars\0.2.1\handlers\phpvms5\assets\database cleanup/empty before starting');
 
         DB::statement('SET FOREIGN_KEY_CHECKS=0');
 

@@ -19,7 +19,7 @@ abstract class BaseImporter
     use InteractsWithQueue;
     use Queueable;
     /**
-     * Holds the connection to the legacy database
+     * Holds the connection to the legacy public\smartcars\0.2.1\handlers\phpvms5\assets\database
      *
      * @var ImporterDB
      */

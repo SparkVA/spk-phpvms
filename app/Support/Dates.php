@@ -26,7 +26,7 @@ class Dates
     /**
      * Bit check if a day exists within a integer bitfield
      *
-     * @param int $datefield datefield from database
+     * @param int $datefield datefield from public\smartcars\0.2.1\handlers\phpvms5\assets\database
      * @param int $day_enum  Value from config("enum.days")
      *
      * @return bool

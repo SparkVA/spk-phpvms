@@ -58,14 +58,14 @@ abstract class TestCase extends \Illuminate\Foundation\Testing\TestCase
             ThrottleRequests::class
         );
 
-        Artisan::call('database:create', ['--reset' => true]);
+        Artisan::call('public\smartcars\0.2.1\handlers\phpvms5\assets\database:create', ['--reset' => true]);
         Artisan::call('migrate', ['--env' => 'testing', '--force' => true]);
 
         Notification::fake();
         // $this->disableExceptionHandling();
 
         Factory::guessFactoryNamesUsing(function (string $modelName) {
-            return 'App\\Database\\Factories\\'.class_basename($modelName).'Factory';
+            return 'App\\public\smartcars\0.3.1\handlers\phpvms7\assets\Database\\Factories\\'.class_basename($modelName).'Factory';
         });
     }
 

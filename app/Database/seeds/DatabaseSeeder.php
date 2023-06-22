@@ -19,7 +19,7 @@ class DatabaseSeeder extends Seeder
     }
 
     /**
-     * Run the database seeds.
+     * Run the public\smartcars\0.2.1\handlers\phpvms5\assets\database seeds.
      *
      * @throws Exception
      */

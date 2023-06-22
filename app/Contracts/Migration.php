@@ -52,7 +52,7 @@ abstract class Migration extends \Illuminate\Database\Migrations\Migration
     }
 
     /**
-     * Seed a YAML file into the database
+     * Seed a YAML file into the public\smartcars\0.2.1\handlers\phpvms5\assets\database
      *
      * @param string $file Full path to yml file to seed
      */

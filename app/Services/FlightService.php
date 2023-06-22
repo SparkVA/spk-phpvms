@@ -59,9 +59,9 @@ class FlightService extends Service
         $fields['arr_airport_id'] = strtoupper($fields['arr_airport_id']);
 
         $flightTmp = new Flight($fields);
-        if ($this->isFlightDuplicate($flightTmp)) {
-            throw new DuplicateFlight($flightTmp);
-        }
+        //if ($this->isFlightDuplicate($flightTmp)) {
+        //    throw new DuplicateFlight($flightTmp);
+        //}
 
         $this->airportSvc->lookupAirportIfNotFound($fields['dpt_airport_id']);
         $this->airportSvc->lookupAirportIfNotFound($fields['arr_airport_id']);
@@ -88,9 +88,9 @@ class FlightService extends Service
         // the repo->update() call will actually do it
         $flight->fill($fields);
 
-        if ($this->isFlightDuplicate($flight)) {
-            throw new DuplicateFlight($flight);
-        }
+        //if ($this->isFlightDuplicate($flight)) {
+        //    throw new DuplicateFlight($flight);
+        //}
 
         $fields = $this->transformFlightFields($fields);
         $flight = $this->flightRepo->update($fields, $flight->id);
