@@ -150,8 +150,7 @@ class RouteServiceProvider extends ServiceProvider
             Route::group([
                 'namespace'  => 'Frontend',
                 'prefix'     => '',
-                'as'         => 'frontend.',
-                'middleware' => 'auth'
+                'as'         => 'frontend.'
             ], function () {
                 Route::get('/', 'HomeController@index')->name('home');
                 Route::get('r/{id}', 'PirepController@show')->name('pirep.show.public');
