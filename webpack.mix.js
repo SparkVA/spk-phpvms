@@ -41,10 +41,10 @@ function buildFrontendAssets()
   ], 'public/assets/frontend/js/vendor.js');
 }
 function buildSparkFrontendAssets() {
-  mix.sass('resources/sass/spk/spk.scss', 'public/assets/spk/spk.css')
-    .sourceMaps();
+  mix.postCss("resources/sass/ignite/ignite.css", "public/assets/ignite/ignite.css", [
+    require("tailwindcss"),
+  ]);
 
-  mix.scripts([]);
 }
 /**
  *
@@ -156,6 +156,7 @@ buildAdminAssets();
 buildInstallerAssets();
 buildGlobalAssets();
 buildApp();
+buildSparkFrontendAssets();
 
 mix.webpackConfig({
     /*entry: {
