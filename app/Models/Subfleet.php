@@ -13,6 +13,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Kyslik\ColumnSortable\Sortable;
 
 /**
  * @property int     id
@@ -26,7 +27,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property float   cost_block_hour
  * @property float   cost_delay_minute
  * @property Airline airline
- * @property Airport hub
+ * @property Airport home
  * @property int     fuel_type
  */
 class Subfleet extends Model
@@ -35,6 +36,7 @@ class Subfleet extends Model
     use FilesTrait;
     use HasFactory;
     use SoftDeletes;
+    use Sortable;
 
     public $fillable = [
         'airline_id',
@@ -72,6 +74,14 @@ class Subfleet extends Model
         'ground_handling_multiplier' => 'nullable|numeric',
     ];
 
+    public $sortable = [
+        'id',
+        'airline_id',
+        'hub_id',
+        'type',
+        'name',
+    ];
+
     /**
      * @return Attribute
      */
@@ -95,6 +105,16 @@ class Subfleet extends Model
         return $this->belongsTo(Airline::class, 'airline_id');
     }
 
+    public function home(): HasOne
+    {
+        return $this->hasOne(Airport::class, 'id', 'hub_id');
+    }
+
+    /**
+     * @deprecated use home()
+     *
+     * @return HasOne
+     */
     public function hub(): HasOne
     {
         return $this->hasOne(Airport::class, 'id', 'hub_id');
